@@ -1,7 +1,15 @@
-from fastapi import Depends, HTTPException, Request
+"""JSON Web Token (JWT) Handling Module"""
+
+from typing import Any
+from datetime import timedelta, datetime
+
+from fastapi import HTTPException, Request
 from fastapi.security import OAuth2
 from fastapi.openapi.models import OAuthFlows as OAuthFlowsModel
 from fastapi.security.utils import get_authorization_scheme_param
+from jose import jwt
+
+from src.auth.config import auth_config
 
 
 class OAuth2PasswordBearerCookie(OAuth2):
@@ -37,3 +45,22 @@ class OAuth2PasswordBearerCookie(OAuth2):
 
 
 security = OAuth2PasswordBearerCookie(token_url="/login")
+
+
+def create_access_token(
+    *,
+    user: dict[str, Any],
+    expires_delta: timedelta = timedelta(minutes=auth_config.JWT_EXP),
+) -> str:
+    """Create the jwt token for a user
+
+    Returns:
+        str: JWT encoded string
+    """
+    jwt_data = {
+        "sub": str(user["id"]),
+        "exp": datetime.utcnow() + expires_delta,
+        # "is_admin": user["is_admin"], -> for future when RBAC is added to the project
+    }
+
+    return jwt.encode(jwt_data, auth_config.JWT_SECRET, algorithm=auth_config.JWT_ALG)
