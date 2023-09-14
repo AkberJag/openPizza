@@ -28,7 +28,7 @@ class OAuth2PasswordBearerCookie(OAuth2):
         super().__init__(flows=flows, scheme_name=scheme_name, auto_error=auto_error)
 
     async def __call__(self, request: Request) -> str | None:
-        authorization: str = request.cookies.get("Authorization")
+        authorization: str = request.cookies.get("access_token")
         scheme, param = get_authorization_scheme_param(authorization)
 
         if not authorization or scheme.lower() != "bearer":
@@ -49,7 +49,7 @@ security = OAuth2PasswordBearerCookie(token_url="/login")
 
 def create_access_token(
     *,
-    user: dict[str, Any],
+    user,
     expires_delta: timedelta = timedelta(minutes=auth_config.JWT_EXP),
 ) -> str:
     """Create the jwt token for a user
@@ -58,7 +58,7 @@ def create_access_token(
         str: JWT encoded string
     """
     jwt_data = {
-        "sub": str(user["id"]),
+        "sub": str(user.id),
         "exp": datetime.utcnow() + expires_delta,
         # "is_admin": user["is_admin"], -> for future when RBAC is added to the project
     }
