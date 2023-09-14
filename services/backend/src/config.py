@@ -13,6 +13,7 @@ class Config(BaseModel):
         "DATABASE_URL",
         "postgresql://hello_fastapi:hello_fastapi@localhost/hello_fastapi_dev",
     )
+    API_V1_URL: str = "/api/v1"
 
 
 settings = Config()
