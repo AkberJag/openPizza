@@ -4,7 +4,7 @@ from pydantic import BaseModel, EmailStr
 
 
 class UserBase(BaseModel):
-    """Shared properties"""
+    """shared properties"""
 
     fullname: None | str = None
     email: None | EmailStr = None
@@ -24,3 +24,22 @@ class UserUpdate(UserBase):
     """Properties to receive via API on update"""
 
     password: None | str = None
+
+
+class UserInDBBase(UserBase):
+    """Shared properties - db"""
+
+    id: None | int = None
+
+    class Config:
+        from_attributes = True
+
+
+class User(UserInDBBase):
+    """Additional properties to return via API"""
+
+
+class UserInDB(UserInDBBase):
+    """Additional properties stored in DB"""
+
+    hashed_password: str
