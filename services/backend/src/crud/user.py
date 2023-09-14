@@ -6,7 +6,7 @@ from fastapi import HTTPException, status
 from .base import CRUDBase
 from src.models.user import User
 from src.schemas.user import UserCreate, UserUpdate
-from src.core.security import verify_password
+from src.auth.security import verify_password
 
 
 class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
