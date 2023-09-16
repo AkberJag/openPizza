@@ -63,3 +63,13 @@ async def login(
     )
 
     return response
+
+
+@router.get("/logout")
+async def logout():
+    content = {
+        "message": "You've successfully logged out",
+    }
+    response = JSONResponse(content=content)
+    response.delete_cookie("access_token")
+    return response
