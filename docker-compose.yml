@@ -13,6 +13,16 @@ services:
     depends_on:
       - db
 
+  frontend:
+    build: ./services/frontend
+    ports:
+      - 8080:8080
+    environment:
+      - CHOKIDAR_USEPOLLING=true # <---- this enables the hot reloading
+    volumes:
+      - ./services/frontend:/app
+      - /app/node_modules # https://stackoverflow.com/a/76177875
+
   db:
     image: postgres:15.1
     expose:
