@@ -1,3 +1,4 @@
+import router from '@/router/index.js'
 export default {
   async login(context, payload) {
     let login_url = 'http://localhost:5000/api/v1/login'
