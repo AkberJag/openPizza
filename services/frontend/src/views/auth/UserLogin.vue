@@ -2,7 +2,7 @@
   <div class="bg-body-tertiary w-100 body">
     <main class="form-signin w-100 m-auto">
       <div class="centered-container">
-        <form class="centered-form">
+        <form class="centered-form" @submit.prevent="submitForm">
           <p style="font-size: 8cap">🍕</p>
           <h1 class="h3 mb-3 fw-normal">Please Login</h1>
 
@@ -12,6 +12,7 @@
               class="form-control"
               id="floatingInput"
               placeholder="name@example.com"
+              v-model.trim="email"
             />
             <label for="floatingInput">Email address / User Name</label>
           </div>
@@ -21,6 +22,7 @@
               class="form-control"
               id="floatingPassword"
               placeholder="Password"
+              v-model.trim="password"
             />
             <label for="floatingPassword">Password</label>
           </div>
@@ -41,7 +43,21 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    async submitForm() {
+      await this.$store.dispatch('login', { email: this.email, password: this.password })
+    }
+  }
+}
+</script>
 
 <style scoped>
 .body {
