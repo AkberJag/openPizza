@@ -27,6 +27,7 @@ def include_middleware(application: FastAPI) -> None:
         CORSMiddleware,
         allow_origins=origins,
         allow_credentials=True,
+        allow_methods=["*"],
         allow_headers=["*"],
     )
 
