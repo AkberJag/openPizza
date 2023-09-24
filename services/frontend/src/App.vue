@@ -13,6 +13,8 @@ import TheAlertContainer from '@/components/layout/TheAlertContainer.vue'
 export default {
   components: { TheAlertContainer },
   mounted() {
+    // Set app theme
+    document.body.setAttribute('data-bs-theme', 'light')
     // enable popover
     Array.from(document.querySelectorAll('button[data-bs-toggle="popover"]')).forEach(
       (popoverNode) => new Popover(popoverNode)
