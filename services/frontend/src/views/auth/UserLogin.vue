@@ -37,6 +37,12 @@
             <label class="form-check-label" for="flexCheckDefault">Remember me </label>
           </div>
           <button class="btn btn-primary w-100 py-2" type="submit">Log in</button>
+          <router-link
+            :to="{ name: 'RegisterRoute' }"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover mt-3"
+          >
+            or Register
+          </router-link>
         </form>
       </div>
     </main>
