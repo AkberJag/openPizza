@@ -1,7 +1,11 @@
 <template>
   <div>
     <TheAlertContainer />
-    <router-view></router-view>
+    <router-view v-slot="{ Component }">
+      <transition name="route" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -24,3 +28,25 @@ export default {
   }
 }
 </script>
+
+<style>
+html,
+body {
+  height: 100%;
+}
+.route-leave-from,
+.route-enter-to {
+  opacity: 1;
+}
+.route-enter-from,
+.route-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.route-enter-active {
+  transition: all 0.3s ease-in;
+}
+.route-leave-active {
+  transition: all 0.3s ease-out;
+}
+</style>
