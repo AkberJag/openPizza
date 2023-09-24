@@ -25,5 +25,31 @@ export default {
     if (responseData.access_token) {
       router.replace('/')
     }
+  },
+
+  async register(context, payload) {
+    let login_url = 'http://localhost:5000/api/v1/register'
+    let body = JSON.stringify({
+      fullname: payload.fullname,
+      email: payload.email,
+      password: payload.password
+    })
+    let headers = { 'Content-Type': 'application/json' }
+
+    const response = await fetch(login_url, {
+      method: 'POST',
+      headers,
+      body
+    })
+
+    const responseData = await response.text()
+
+    if (!response.ok) {
+      console.log(responseData)
+    }
+
+    if (responseData.access_token) {
+      router.replace('/')
+    }
   }
 }
