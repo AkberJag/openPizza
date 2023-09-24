@@ -38,6 +38,12 @@
             <label for="floatingPassword">Password</label>
           </div>
           <button class="btn btn-primary w-100 py-2 mt-4" type="submit">Register</button>
+          <router-link
+            :to="{ name: 'LoginRoute' }"
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover mt-3"
+          >
+            or Login
+          </router-link>
         </form>
       </div>
     </main>
