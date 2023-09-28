@@ -17,17 +17,7 @@ export default {
 
   data() {
     return {
-      alerts: []
-    }
-  },
-  methods: {
-    addAlert() {
-      this.alerts.push({
-        id: Date.now(),
-        message:
-          'A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.',
-        strongMessage: 'Too strong'
-      })
+      alerts: this.$store.state.global.errors
     }
   }
 }
