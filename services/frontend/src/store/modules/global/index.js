@@ -1,10 +1,12 @@
 import actions from './actions'
+import mutations from './mutations'
 
 export default {
   state() {
     return {
-      isLoggedIn: false
+      errors: []
     }
   },
-  actions
+  actions,
+  mutations
 }
