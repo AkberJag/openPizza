@@ -17,7 +17,7 @@ export default {
   props: {
     alertType: {
       type: String,
-      default: 'alert-warning'
+      default: 'warning'
     },
     alertID: String,
     message: String,
