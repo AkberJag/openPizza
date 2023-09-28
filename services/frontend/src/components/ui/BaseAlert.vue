@@ -2,12 +2,11 @@
   <div
     class="alert alert-dismissible fade show mb-2 shadow-sm"
     role="alert"
-    :class="alertType"
+    :class="'alert-' + alertType"
     :id="alertID"
   >
     <i class="bi bi-exclamation-triangle-fill me-2"></i>
-    <strong v-if="strongMessage">{{ strongMessage }}</strong> You should check in on some of those
-    fields below.
+    <strong v-if="strongMessage">{{ strongMessage }}</strong> {{ message }} {{ alertID }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 </template>
@@ -18,7 +17,7 @@ export default {
   props: {
     alertType: {
       type: String,
-      default: 'alert-danger'
+      default: 'alert-warning'
     },
     alertID: String,
     message: String,
