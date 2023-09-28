@@ -6,6 +6,7 @@
       :alertID="alert.id.toString()"
       :message="alert.message"
       :strongMessage="alert.strongMessage"
+      :alertType="alert.alertType"
     ></base-alert>
   </div>
 </template>
