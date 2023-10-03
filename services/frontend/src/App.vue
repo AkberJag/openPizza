@@ -1,11 +1,20 @@
 <template>
   <div>
     <TheAlertContainer />
-    <router-view v-slot="{ Component }">
-      <transition name="route" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+    <div class="container-fluid">
+      <div class="row flex-nowrap no-gutters">
+        <div v-if="true" class="col-auto p-0">
+          <SideBar />
+        </div>
+        <div class="col">
+          <router-view v-slot="{ Component }">
+            <transition name="route" mode="out-in">
+              <component :is="Component" />
+            </transition>
+          </router-view>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -13,9 +22,10 @@
 import { Popover } from 'bootstrap/dist/js/bootstrap.esm.min.js'
 // import { Toast } from 'bootstrap/dist/js/bootstrap.esm.min.js'
 import TheAlertContainer from '@/components/layout/TheAlertContainer.vue'
+import SideBar from '@/components/layout/TheSideBar.vue'
 
 export default {
-  components: { TheAlertContainer },
+  components: { TheAlertContainer, SideBar },
   mounted() {
     // Set app theme
     document.body.setAttribute('data-bs-theme', 'light')
