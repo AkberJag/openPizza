@@ -4,8 +4,8 @@
     <ul class="nav nav-pills nav-flush flex-column mb-auto text-center flex-fill">
       <!-- menus -->
       <li>
-        <a
-          href="#"
+        <router-link
+          :to="{ name: 'HomeRoute' }"
           class="nav-link py-3 border-bottom border-top"
           aria-current="page"
           title=""
@@ -14,7 +14,7 @@
           data-bs-original-title="Home"
         >
           <i class="bi bi-pencil-square"></i>
-        </a>
+        </router-link>
       </li>
       <!-- orders -->
       <li>
