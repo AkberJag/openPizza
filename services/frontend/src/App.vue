@@ -4,14 +4,16 @@
     <div class="container-fluid">
       <div class="row flex-nowrap no-gutters">
         <div v-if="true" class="col-auto p-0">
-          <SideBar />
+          <SideBar @themeChange="themeChange" />
         </div>
-        <div class="col">
-          <router-view v-slot="{ Component }">
-            <transition name="route" mode="out-in">
-              <component :is="Component" />
-            </transition>
-          </router-view>
+        <div class="col p-0">
+          <div class="container-fluid vh-100" style="overflow: hidden">
+            <router-view v-slot="{ Component }">
+              <transition name="route" mode="out-in">
+                <component :is="Component" />
+              </transition>
+            </router-view>
+          </div>
         </div>
       </div>
     </div>
@@ -28,13 +30,18 @@ export default {
   components: { TheAlertContainer, SideBar },
   mounted() {
     // Set app theme
-    document.body.setAttribute('data-bs-theme', 'light')
+    document.body.setAttribute('data-bs-theme', this.$store.getters.getTheme)
     // enable popover
     Array.from(document.querySelectorAll('button[data-bs-toggle="popover"]')).forEach(
       (popoverNode) => new Popover(popoverNode)
     )
     //inti toast
     // Array.from(document.querySelectorAll('.toast')).forEach((toastNode) => new Toast(toastNode))
+  },
+  methods: {
+    themeChange(val) {
+      document.body.setAttribute('data-bs-theme', val)
+    }
   }
 }
 </script>
