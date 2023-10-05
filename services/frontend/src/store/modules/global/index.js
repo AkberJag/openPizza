@@ -1,12 +1,15 @@
 import actions from './actions'
 import mutations from './mutations'
+import getters from './getters'
 
 export default {
   state() {
     return {
-      errors: []
+      errors: [{ message: 'test', strongMessage: 'St' }],
+      theme: 'light'
     }
   },
   actions,
-  mutations
+  mutations,
+  getters
 }
