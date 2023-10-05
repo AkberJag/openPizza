@@ -3,7 +3,7 @@
     <base-alert
       v-for="(alert, index) in alerts"
       :key="index"
-      :alertID="alert.id.toString()"
+      :alertID="Date.now().toString()"
       :message="alert.message"
       :strongMessage="alert.strongMessage"
       :alertType="alert.alertType"
