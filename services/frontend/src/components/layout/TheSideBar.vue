@@ -1,7 +1,7 @@
 <template>
-  <div class="d-flex flex-column flex-shrink-0 bg-light min-vh-100" style="width: 4.5rem">
+  <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary min-vh-100" style="width: 4.5rem">
     <div class="text-center" style="font-size: xxx-large">🍕</div>
-    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center flex-fill">
+    <ul class="nav nav-pills flex-column mb-auto text-center">
       <!-- menus -->
       <li>
         <router-link
@@ -74,7 +74,7 @@
     <div class="dropdown border-top">
       <a
         href="#"
-        class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle"
+        class="d-flex align-items-center justify-content-center p-3 text-decoration-none dropdown-toggle"
         id="dropdownUser3"
         data-bs-toggle="dropdown"
         aria-expanded="false"
