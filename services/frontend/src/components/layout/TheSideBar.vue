@@ -84,13 +84,34 @@
       <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
         <li><a class="dropdown-item" href="#">New project...</a></li>
         <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li>
+          <a class="dropdown-item" @click="changeTheme" style="cursor: pointer"
+            >Disable {{ currentTheme }} mode</a
+          >
+        </li>
         <li><hr class="dropdown-divider" /></li>
         <li><a class="dropdown-item" href="#">Sign out</a></li>
       </ul>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      currentTheme: this.$store.getters.getTheme
+    }
+  },
+  methods: {
+    changeTheme() {
+      this.$store.commit('setTheme')
+      this.currentTheme = this.$store.getters.getTheme
+      this.$emit('themeChange', this.currentTheme)
+    }
+  }
+}
+</script>
 
 <style scoped>
 .nav-link {
