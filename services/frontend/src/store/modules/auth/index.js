@@ -1,5 +1,6 @@
 import actions from './actions'
 import getters from './getters'
+import mutations from './mutations'
 
 export default {
   namespaced: true,
@@ -10,5 +11,6 @@ export default {
     }
   },
   actions,
-  getters
+  getters,
+  mutations
 }
