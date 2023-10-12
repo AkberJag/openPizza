@@ -1,5 +1,9 @@
 <template>
-  <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary min-vh-100" style="width: 4.5rem">
+  <div
+    class="d-flex flex-column flex-shrink-0 bg-body-tertiary min-vh-100"
+    style="width: 4.5rem"
+    v-if="isLoggedIn"
+  >
     <div class="text-center" style="font-size: xxx-large">🍕</div>
     <ul class="nav nav-pills flex-column mb-auto text-center">
       <!-- menus -->
@@ -108,6 +112,11 @@ export default {
       this.$store.commit('setTheme')
       this.currentTheme = this.$store.getters.getTheme
       this.$emit('themeChange', this.currentTheme)
+    }
+  },
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters['auth/isAuthenticated']
     }
   }
 }
