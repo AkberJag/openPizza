@@ -51,6 +51,10 @@ html,
 body {
   height: 100%;
 }
+
+img {
+  pointer-events: none;
+}
 .route-leave-from,
 .route-enter-to {
   opacity: 1;
