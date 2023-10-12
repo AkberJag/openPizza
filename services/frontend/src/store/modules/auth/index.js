@@ -4,7 +4,8 @@ import getters from './getters'
 export default {
   state() {
     return {
-      isLoggedIn: false
+      isLoggedIn: false,
+      userName: ''
     }
   },
   actions
