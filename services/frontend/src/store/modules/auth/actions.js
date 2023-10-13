@@ -53,5 +53,12 @@ export default {
     if (responseData.access_token) {
       router.replace('/')
     }
+  },
+
+  async logout(context) {
+    let logout_url = 'http://localhost:5000/api/v1/logout'
+    await fetch(logout_url, { credentials: 'include', method: 'GET' })
+    context.commit('setUser', { isLoggedIn: false })
+    router.replace({ name: 'Login' })
   }
 }
