@@ -94,7 +94,7 @@
           >
         </li>
         <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
+        <li><a class="dropdown-item" href="#" @click="logout">Sign out</a></li>
       </ul>
     </div>
   </div>
@@ -112,6 +112,9 @@ export default {
       this.$store.commit('setTheme')
       this.currentTheme = this.$store.getters.getTheme
       this.$emit('themeChange', this.currentTheme)
+    },
+    async logout() {
+      await this.$store.dispatch('auth/logout')
     }
   },
   computed: {
