@@ -33,7 +33,7 @@ const router = createRouter({
 
 // navigation guard
 router.beforeEach(function (to, from, next) {
-  if (to.meta.authRequired && !store.getters.isAuthenticated) {
+  if (to.meta.authRequired && !store.getters['auth/isAuthenticated']) {
     next({ name: 'LoginRoute' })
   } else {
     next()
