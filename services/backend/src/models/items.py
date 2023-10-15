@@ -7,20 +7,20 @@ from sqlalchemy.orm import relationship
 from .base import Base
 
 
-class FoodCategories(Base):
+class FoodCategory(Base):
     """Food category model"""
 
-    __tabelname__ = "food_categories"
+    __tablename__ = "food_categories"
 
     category_id = Column(Integer, primary_key=True, index=True)
     category_name = Column(String, index=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
-    # Define a relationship to FoodItem
-    items = relationship("FoodItem", back_populates="category")
+    # Relationship to FoodItem
+    food_items = relationship("FoodItem", back_populates="food_category")
 
 
-class FoodItems(Base):
+class FoodItem(Base):
     """Food items model"""
 
     __tablename__ = "food_items"
@@ -29,9 +29,8 @@ class FoodItems(Base):
     item_name = Column(String, index=True)
     category_id = Column(Integer, ForeignKey("food_categories.category_id"))
     price = Column(Float)
-
     image_url = Column(String)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
-    # relationship to FoodCategory
-    category = relationship("FoodCategory", back_populates="items")
+    # Relationship to FoodCategory
+    food_category = relationship("FoodCategory", back_populates="food_items")
