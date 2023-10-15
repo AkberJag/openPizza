@@ -1,3 +1,3 @@
 from .base import Base
 from .user import User
-from .items import FoodCategory, FoodItem
+from .food import FoodCategory, FoodItem
