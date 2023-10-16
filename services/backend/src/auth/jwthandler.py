@@ -9,6 +9,7 @@ from fastapi.openapi.models import OAuthFlows as OAuthFlowsModel
 from fastapi.security.utils import get_authorization_scheme_param
 from jose import jwt
 
+from src.config import settings
 from src.auth.config import auth_config
 
 
@@ -44,7 +45,7 @@ class OAuth2PasswordBearerCookie(OAuth2):
         return param
 
 
-security = OAuth2PasswordBearerCookie(token_url="/login")
+security = OAuth2PasswordBearerCookie(token_url=settings.API_V1_URL + "/login")
 
 
 def create_access_token(
