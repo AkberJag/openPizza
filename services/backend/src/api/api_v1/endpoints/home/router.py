@@ -57,3 +57,20 @@ async def food_items_by_category(category_id: int, db: Session = Depends(get_db)
         )
 
     return food_items
+
+
+@router.post("/food_items")
+async def add_food_item(food_item_in: FoodItemCreate, db: Session = Depends(get_db)):
+    try:
+        return crud_food_item.create(db, obj_in=food_item_in)
+    except IntegrityError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail=f"{food_item_in.item_name} is already exist",
+        ) from exc
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Internal server error: {str(e)}",
+        ) from e
