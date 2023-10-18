@@ -1,7 +1,8 @@
 from datetime import datetime
-from pydantic import BaseModel
+from pydantic import BaseModel, HttpUrl
 
 
+# Food Category
 class FoodCategoryBase(BaseModel):
     """shared properties"""
 
@@ -18,10 +19,10 @@ class FoodCategoryUpdate(FoodCategoryBase):
     """Properties to receive via API on update"""
 
 
-class FoodCategoryInDBBase(BaseModel):
+class FoodCategoryInDBBase(FoodCategoryBase):
     """Shared properties - db"""
 
-    category_name: str
+    category_id: int
 
     class Config:
         from_attributes = True
@@ -29,8 +30,6 @@ class FoodCategoryInDBBase(BaseModel):
 
 class FoodCategory(FoodCategoryInDBBase):
     """Additional properties to return via API"""
-
-    category_id: int
 
 
 class FoodCategoryInDB(FoodCategoryInDBBase):
