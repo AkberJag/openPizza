@@ -23,4 +23,7 @@ export default {
 img {
   height: 58px;
 }
+.card {
+  cursor: pointer;
+}
 </style>
