@@ -13,7 +13,7 @@ from src.schemas import UserCreate, UserInDB
 from src.database.session import get_db
 from src.auth.security import get_password_hash
 from src.auth.dependencies import get_current_user
-from src.models import User
+from src.schemas import User
 from src.auth.jwthandler import create_access_token
 
 router = APIRouter()
@@ -73,3 +73,8 @@ async def logout():
     response = JSONResponse(content=content)
     response.delete_cookie("access_token")
     return response
+
+
+@router.get("/me", response_model=User)
+async def read_users_me(current_user: User = Depends(get_current_user)):
+    return current_user
