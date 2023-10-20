@@ -32,9 +32,14 @@ const router = createRouter({
 })
 
 // navigation guard
-router.beforeEach(function (to, from, next) {
+router.beforeEach(async (to, from, next) => {
   if (to.meta.authRequired && !store.getters['auth/isAuthenticated']) {
-    next({ name: 'LoginRoute' })
+    await store.dispatch('auth/try_auto_login')
+    if (store.getters['auth/isAuthenticated']) {
+      next()
+    } else {
+      next({ name: 'LoginRoute' })
+    }
   } else {
     next()
   }
