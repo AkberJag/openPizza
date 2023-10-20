@@ -20,5 +20,19 @@ export default {
       categories.push(category)
     }
     context.commit('addCategory', categories)
+  },
+  async getAllItems(context, payload) {
+    let url = `http://localhost:5000/api/v1/home/food_category/${payload}/food_items`
+
+    const response = await fetch(url, {
+      method: 'GET',
+      credentials: 'include'
+    })
+
+    const responseData = await response.json()
+
+    const items = []
+
+    // todo: add items to the selected category
   }
 }
