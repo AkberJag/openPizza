@@ -60,5 +60,16 @@ export default {
     await fetch(logout_url, { credentials: 'include', method: 'GET' })
     context.commit('setUser', { isLoggedIn: false })
     router.replace({ name: 'LoginRoute' })
+  },
+
+  async try_auto_login(context) {
+    // Auto Login using the stored cookie
+    let login_url = 'http://localhost:5000/api/v1/me'
+
+    const response = await fetch(login_url, { method: 'GET', credentials: 'include' })
+    const responseData = await response.json()
+    if (responseData.is_active === true && response.ok) {
+      context.commit('setUser', { isLoggedIn: true, username: responseData.fullname })
+    }
   }
 }
