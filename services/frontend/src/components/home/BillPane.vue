@@ -22,7 +22,9 @@
             <div class="col mt-2">
               <div class="card shadow-sm" style="overflow: auto; height: calc((100vh - 180px) / 3)">
                 <div class="card-body p-2 ms-2" style="overflow: auto">
-                  <span class="badge text-bg-secondary float-end me-2">DELIVERY</span>
+                  <span class="badge text-bg-secondary float-end me-2 text-uppercase">{{
+                    cartItems.orderType
+                  }}</span>
                   <p class="m-0"><strong>Bill Gates</strong></p>
                   <p class="mb-0 text-body-secondary">(555) 555-6666</p>
                   <p class="mb-0 text-body-secondary">123 Main Street</p>
@@ -47,7 +49,12 @@
                 <div class="card-body" style="overflow: auto; height: calc((100vh - 120px) / 3)">
                   <table class="table table-hover">
                     <tbody>
-                      <!-- <BillItem /> -->
+                      <BillItem
+                        v-for="(item, index) in cartItems.items"
+                        :key="index"
+                        :count="index"
+                        :item="item"
+                      />
                     </tbody>
                   </table>
                 </div>
@@ -77,7 +84,7 @@
                   class="list-group-item list-group-item-action d-flex justify-content-between list-group-item-secondary p-1 px-3"
                 >
                   <div class="text-dark-emphasis ms-2">Subtotal</div>
-                  <div class="text-dark-emphasis me-2 pe-2">$16.00</div>
+                  <div class="text-dark-emphasis me-2 pe-2 fw-bold">${{ cartItems.subTotal }}</div>
                 </div>
                 <div
                   class="list-group-item list-group-item-action d-flex justify-content-between list-group-item-secondary p-1 px-3"
@@ -89,11 +96,10 @@
                       type="checkbox"
                       role="switch"
                       id="flexSwitchCheckChecked"
-                      checked
                     />
                   </div>
 
-                  <div class="text-dark-emphasis me-2 pe-2">$1.42</div>
+                  <div class="text-dark-emphasis me-2 pe-2">${{ cartItems.subTotal * 0.2 }}</div>
                 </div>
                 <div class="list-group-item d-flex justify-content-between d-grid gap-2 shadow-sm">
                   <button type="button" class="btn btn-secondary col-4">Hold</button>
@@ -111,7 +117,12 @@
 <script>
 import BillItem from './BillItem.vue'
 export default {
-  components: { BillItem }
+  components: { BillItem },
+  computed: {
+    cartItems() {
+      return this.$store.getters['foodData/getCurrentCart']
+    }
+  }
 }
 </script>
 
