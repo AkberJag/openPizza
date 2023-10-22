@@ -18,7 +18,7 @@ export default {
         }
       ],
       // todo: later move this to the bill store
-      itemsOnHold: [],
+      cartsOnHold: [],
       currentCart: {
         id: null,
         customer: null,
