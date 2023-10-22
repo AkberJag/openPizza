@@ -7,5 +7,9 @@ export default {
     if (categoryIndex !== -1) {
       state.menuData[categoryIndex].items = payload.data
     }
+  },
+  addItemTocurrentCart(state, payload) {
+    state.currentCart.subTotal += payload.price
+    state.currentCart.items.push(payload)
   }
 }
