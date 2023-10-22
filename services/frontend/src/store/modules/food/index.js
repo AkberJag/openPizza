@@ -26,7 +26,8 @@ export default {
         tax: 0,
         deliveryCharge: 0,
         extraCharge: 0,
-        orderType: 'Dine In'
+        orderType: 'Dine In',
+        subTotal: 0
       }
     }
   },
