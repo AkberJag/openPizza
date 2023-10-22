@@ -14,8 +14,7 @@ export default {
       const category = {
         categoryID: responseData[key].category_id,
         categoryName: responseData[key].category_name,
-        categoryImageURL: responseData[key].category_image_url,
-        items: []
+        categoryImageURL: responseData[key].category_image_url
       }
       categories.push(category)
     }
@@ -30,9 +29,6 @@ export default {
     })
 
     const responseData = await response.json()
-
-    const items = []
-
-    // todo: add items to the selected category
+    context.commit('setItems', { id: payload, data: responseData })
   }
 }
