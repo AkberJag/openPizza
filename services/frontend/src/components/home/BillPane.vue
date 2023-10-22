@@ -47,35 +47,7 @@
                 <div class="card-body" style="overflow: auto; height: calc((100vh - 120px) / 3)">
                   <table class="table table-hover">
                     <tbody>
-                      <tr>
-                        <th scope="row" class="fs-6">1</th>
-                        <td>
-                          <div class="row me-0">
-                            <div
-                              class="aa fw-bold text-capitalize fs-6 col-10 m-0"
-                              data-bs-toggle="collapse"
-                              href="#collapseExample"
-                              aria-expanded="false"
-                              style="cursor: pointer"
-                            >
-                              chicken francese
-                              <span class="right-icon ms-auto">
-                                <i class="bi bi-chevron-down"></i>
-                              </span>
-                            </div>
-                            <div class="fw-bold text-end col-2">$12</div>
-                          </div>
-                          <div class="collapse m-0" id="collapseExample">
-                            <div class="row me-0">
-                              <div class="col-10">
-                                <span class="me-2 text-danger" style="opacity: 75%">Type</span>
-                                <span class="text-body-secondary">Dinner</span>
-                              </div>
-                              <div class="col-2 text-end text-body-secondary">$12</div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
+                      <!-- <BillItem /> -->
                     </tbody>
                   </table>
                 </div>
@@ -136,18 +108,16 @@
   </div>
 </template>
 
+<script>
+import BillItem from './BillItem.vue'
+export default {
+  components: { BillItem }
+}
+</script>
+
 <style scoped>
 li {
   padding-left: 2em;
   margin-bottom: 1em;
-}
-.right-icon {
-  display: inline-flex;
-  transition: all 0.3s;
-  opacity: 50%;
-}
-
-.aa[aria-expanded='true'] .right-icon {
-  transform: rotate(180deg);
 }
 </style>
