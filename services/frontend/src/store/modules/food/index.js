@@ -16,7 +16,18 @@ export default {
           //   { itemID: 2, itemName: 'Banana', price: 0.6, calories: 105 }
           // ]
         }
-      ]
+      ],
+      // todo: later move this to the bill store
+      itemsOnHold: [],
+      currentCart: {
+        id: null,
+        customer: null,
+        items: [],
+        tax: 0,
+        deliveryCharge: 0,
+        extraCharge: 0,
+        orderType: 'Dine In'
+      }
     }
   },
   actions,
