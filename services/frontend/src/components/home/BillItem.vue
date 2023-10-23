@@ -15,7 +15,7 @@
         <div class="row me-0">
           <div class="col-10">
             <span class="me-2 text-danger" style="opacity: 75%">Type</span>
-            <span class="text-body-secondary">Dinner</span>
+            <span class="text-body-secondary">{{ categoryType(item.category_id) }}</span>
           </div>
           <div class="col-2 text-end text-body-secondary">${{ item.price }}</div>
         </div>
@@ -45,6 +45,12 @@ export default {
     test() {
       this.collapseInstance.toggle()
       this.rotateArrow = !this.rotateArrow
+    },
+    categoryType(categoryID) {
+      const foodCategories = this.$store.getters['foodData/allFoodCategories']
+      return foodCategories[
+        foodCategories.findIndex((category) => category.categoryID === categoryID)
+      ].categoryName
     }
   }
 }
