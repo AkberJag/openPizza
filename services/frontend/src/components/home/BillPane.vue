@@ -7,7 +7,7 @@
             <div class="col-md-4 text-start p-1 text-body-secondary">
               <i class="bi bi-printer"> Print</i>
             </div>
-            <div class="col-md-4 text-center fw-bold fs-4">#9</div>
+            <div class="col-md-4 text-center fw-bold fs-4">#9 ({{ totalItems }})</div>
             <div class="col-md-4 text-end p-1">
               <div class="d-inline mx-3 text-body-secondary"><i class="bi bi-copy"></i> Copy</div>
               <div class="d-inline text-body-secondary"><i class="bi bi-trash"></i> Clear</div>
@@ -84,7 +84,9 @@
                   class="list-group-item list-group-item-action d-flex justify-content-between list-group-item-secondary p-1 px-3"
                 >
                   <div class="text-dark-emphasis ms-2">Subtotal</div>
-                  <div class="text-dark-emphasis me-2 pe-2 fw-bold">${{ cartItems.subTotal }}</div>
+                  <div class="text-dark-emphasis me-2 pe-2 fw-bold">
+                    ${{ subTotal_tweened.toFixed(2) }}
+                  </div>
                 </div>
                 <div
                   class="list-group-item list-group-item-action d-flex justify-content-between list-group-item-secondary p-1 px-3"
@@ -96,10 +98,12 @@
                       type="checkbox"
                       role="switch"
                       id="flexSwitchCheckChecked"
+                      v-model="toggleTax"
                     />
                   </div>
-
-                  <div class="text-dark-emphasis me-2 pe-2">${{ cartItems.subTotal * 0.2 }}</div>
+                  <div class="text-dark-emphasis me-2 pe-2" :class="{ 'fw-bold': toggleTax }">
+                    ${{ taxAmount_tweened.toFixed(2) }}
+                  </div>
                 </div>
                 <div class="list-group-item d-flex justify-content-between d-grid gap-2 shadow-sm">
                   <button type="button" class="btn btn-secondary col-4">Hold</button>
@@ -115,12 +119,45 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+
 import BillItem from './BillItem.vue'
 export default {
   components: { BillItem },
+
+  data() {
+    return {
+      toggleTax: false,
+      taxPercentage: 0.2,
+      totalItems: 0,
+
+      subTotal_tweened: 0,
+      taxAmount_tweened: 0
+    }
+  },
+
   computed: {
     cartItems() {
-      return this.$store.getters['foodData/getCurrentCart']
+      const items = this.$store.getters['foodData/getCurrentCart']
+      this.totalItems = items.items.length
+      return items
+    },
+    subTotal() {
+      return this.toggleTax
+        ? this.cartItems.subTotal + this.cartItems.subTotal * this.taxPercentage
+        : this.cartItems.subTotal
+    },
+    taxAmount() {
+      return this.cartItems.subTotal * this.taxPercentage
+    }
+  },
+
+  watch: {
+    subTotal(n) {
+      gsap.to(this, { duration: 0.5, subTotal_tweened: Number(n) || 0 })
+    },
+    taxAmount(n) {
+      gsap.to(this, { duration: 0.5, taxAmount_tweened: Number(n) || 0 })
     }
   }
 }
