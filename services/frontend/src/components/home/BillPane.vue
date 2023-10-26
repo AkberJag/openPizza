@@ -5,12 +5,16 @@
         <div class="container">
           <div class="row">
             <div class="col-md-4 text-start p-1 text-body-secondary">
-              <i class="bi bi-printer"> Print</i>
+              <i class="bi bi-printer cursorPointer"> Print</i>
             </div>
             <div class="col-md-4 text-center fw-bold fs-4">#9 ({{ totalItems }})</div>
             <div class="col-md-4 text-end p-1">
-              <div class="d-inline mx-3 text-body-secondary"><i class="bi bi-copy"></i> Copy</div>
-              <div class="d-inline text-body-secondary"><i class="bi bi-trash"></i> Clear</div>
+              <div class="d-inline mx-3 text-body-secondary cursorPointer">
+                <i class="bi bi-copy"></i> Copy
+              </div>
+              <div class="d-inline text-body-secondary cursorPointer" @click="clearBill">
+                <i class="bi bi-trash"></i> Clear
+              </div>
             </div>
           </div>
         </div>
@@ -167,5 +171,8 @@ export default {
 li {
   padding-left: 2em;
   margin-bottom: 1em;
+}
+.cursorPointer {
+  cursor: pointer;
 }
 </style>
