@@ -18,5 +18,11 @@ export default {
       // If the item doesn't exist, add it to the array with qty 1
       state.currentCart.items.push({ ...payload, qty: 1 })
     }
+  },
+
+  clearCurrentCart(state) {
+    // clear all items in the cart and set the total to 0
+    state.currentCart.subTotal = 0
+    state.currentCart.items = []
   }
 }
