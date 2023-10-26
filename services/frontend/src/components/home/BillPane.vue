@@ -140,6 +140,12 @@ export default {
     }
   },
 
+  methods: {
+    clearBill() {
+      this.$store.commit('foodData/clearCurrentCart')
+    }
+  },
+
   computed: {
     cartItems() {
       const items = this.$store.getters['foodData/getCurrentCart']
