@@ -2,64 +2,31 @@
   <div class="container-fluid p-0">
     <div class="row row-cols-md-2">
       <div class="col p-2">
-        <div class="card shadow d-flex">
-          <div class="card-header">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4 text-start p-1 text-body-secondary">
-                  <i class="bi bi-search"> Search</i>
-                </div>
-                <div class="col-md-4 text-center fw-bold fs-4">Menu</div>
-              </div>
-            </div>
-          </div>
-          <div class="card-body p-1" style="overflow: hidden">
-            <div class="container-fluid">
-              <div class="row row-cols-md-2" style="height: calc(100vh - 80px)">
-                <div class="col h-100 p-0 bg-body-secondary" style="overflow: auto">
-                  <itemCard
-                    title="1"
-                    imageURL="https://www.funfoodfrolic.com/wp-content/uploads/2020/04/Bean-Salad-Thumbnail.jpg"
-                  />
-                  <itemCard title="2" />
-                  <itemCard title="3" />
-                  <itemCard title="4" />
-                  <itemCard title="5" />
-                  <itemCard title="6" />
-                  <itemCard title="6" />
-                  <itemCard title="6" />
-                  <itemCard title="7" />
-                </div>
-                <div class="col h-100" style="overflow: auto">
-                  <itemCard title="ahahahh" />
-                  <itemCard title="ahahahh" />
-                  <itemCard title="ahahahh" />
-                  <itemCard title="ahahahh" />
-                  <itemCard title="ahahahh" />
-                  <itemCard title="ahahahh" />
-                  <itemCard title="ahahahh" />
-                  <itemCard title="ahahahh" />
-                  <itemCard title="ahahahh" />
-                  <itemCard title="ahahahh" />
-                  <itemCard title="1" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <transition name="component" mode="out-in">
+          <component :is="leftPaneComponent"></component>
+        </transition>
       </div>
       <div class="col p-2 bg-secondary">
-        <BillPane />
+        <transition name="component" mode="out-in">
+          <component :is="rightPaneComponent"></component>
+        </transition>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import itemCard from '@/components/home/ItemCard.vue'
 import BillPane from '@/components/home/BillPane.vue'
+import MenuPane from '@/components/home/MenuPane.vue'
+
 export default {
-  components: { itemCard, BillPane }
+  components: { BillPane, MenuPane },
+  data() {
+    return {
+      leftPaneComponent: MenuPane,
+      rightPaneComponent: BillPane
+    }
+  }
 }
 </script>
 
@@ -70,5 +37,21 @@ img {
 
   height: 58px;
   width: 60px;
+}
+
+.component-leave-from,
+.component-enter-to {
+  opacity: 1;
+}
+.component-enter-from,
+.component-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.component-enter-active {
+  transition: all 0.3s ease-in;
+}
+.component-leave-active {
+  transition: all 0.3s ease-out;
 }
 </style>
