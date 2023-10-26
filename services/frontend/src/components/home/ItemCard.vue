@@ -1,5 +1,9 @@
 <template>
-  <div class="card m-3 shadow-sm" style="max-height: 60px">
+  <div
+    class="card m-3"
+    :class="selected ? 'shadow border-secondary border-2' : 'shadow-sm'"
+    style="max-height: 60px"
+  >
     <div class="row g-0">
       <div class="col-md-4">
         <img :src="imageURL" class="img-fluid rounded-start" alt="" />
@@ -15,7 +19,7 @@
 
 <script>
 export default {
-  props: ['imageURL', 'title']
+  props: ['imageURL', 'title', 'selected']
 }
 </script>
 
