@@ -3,13 +3,14 @@
     <th scope="row" class="fs-6">{{ count + 1 }}</th>
     <td class="col-11">
       <div class="row me-0">
-        <div class="fw-bold text-capitalize fs-6 col-10 m-0" style="cursor: pointer" @click="test">
+        <div class="fw-bold text-capitalize fs-6 col-8 m-0" style="cursor: pointer" @click="test">
           {{ item.item_name }}
           <span class="right-icon ms-auto" :class="{ 'right-icon-rotate': rotateArrow }">
             <i class="bi bi-chevron-down"></i>
           </span>
         </div>
-        <div class="fw-bold text-end col-2">${{ item.price }}</div>
+        <div class="text-end col-2">x {{ itemQTY }}</div>
+        <div class="fw-bold text-end col-2">${{ itemTotalPrice }}</div>
       </div>
       <div class="collapse m-0" :id="count">
         <div class="row me-0">
@@ -40,7 +41,14 @@ export default {
       rotateArrow: false
     }
   },
-
+  computed: {
+    itemQTY() {
+      return this.item.qty
+    },
+    itemTotalPrice() {
+      return this.item.price * this.itemQTY
+    }
+  },
   methods: {
     test() {
       this.collapseInstance.toggle()

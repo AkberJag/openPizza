@@ -7,15 +7,15 @@ export default {
   state() {
     return {
       menuData: [
-        {
-          // categoryID: 1,
-          // categoryName: 'Fruits',
-          // categoryImageURL: null,
-          // items: [
-          //   { itemID: 1, itemName: 'Apple', price: 0.75, calories: 95 },
-          //   { itemID: 2, itemName: 'Banana', price: 0.6, calories: 105 }
-          // ]
-        }
+        // {
+        // categoryID: 1,
+        // categoryName: 'Fruits',
+        // categoryImageURL: null,
+        // items: [
+        //   { itemID: 1, itemName: 'Apple', price: 0.75, calories: 95 },
+        //   { itemID: 2, itemName: 'Banana', price: 0.6, calories: 105 }
+        // ]
+        // }
       ],
       // todo: later move this to the bill store
       cartsOnHold: [],
