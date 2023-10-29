@@ -110,8 +110,20 @@
                   </div>
                 </div>
                 <div class="list-group-item d-flex justify-content-between d-grid gap-2 shadow-sm">
-                  <button type="button" class="btn btn-secondary col-4">Hold</button>
-                  <button type="button" class="btn btn-danger col-8">Pay</button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary col-4"
+                    :class="{ disabled: totalItems === 0 }"
+                  >
+                    Hold
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger col-8"
+                    :class="{ disabled: totalItems === 0 }"
+                  >
+                    Pay
+                  </button>
                 </div>
               </div>
             </div>
