@@ -55,6 +55,9 @@ body {
 img {
   pointer-events: none;
 }
+.cursorPointer {
+  cursor: pointer;
+}
 .route-leave-from,
 .route-enter-to {
   opacity: 1;
