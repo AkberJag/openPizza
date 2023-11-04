@@ -5,7 +5,10 @@
         <div class="container">
           <div class="row">
             <div class="text-end p-1 d-flex justify-content-end">
-              <div class="d-inline mx-3 text-body-secondary cursorPointer">
+              <div
+                class="d-inline mx-3 text-body-secondary cursorPointer"
+                @click="$emit('changeComponent', 'BillPane')"
+              >
                 <i class="bi bi-x-square"></i> Cancel
               </div>
             </div>
@@ -20,10 +23,10 @@
                 <span class="fw-bold fs-5">Cash Payment Complete</span>
                 <div class="card my-4 shadow-sm">
                   <div class="card-body">
-                    <span class="fw-bold"> $12.20 - Paid </span>
+                    <span class="fw-bold"> ${{ total }} - Paid </span>
                   </div>
                 </div>
-                <span class="fw-bold"> $12.20 Order Total </span>
+                <span class="fw-bold"> ${{ total }} Order Total</span>
               </div>
             </div>
           </div>
@@ -38,3 +41,18 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    cartItems() {
+      const items = this.$store.getters['foodData/getCurrentCart']
+      this.totalItems = items.items.length
+      return items
+    },
+    total() {
+      return this.cartItems.subTotal + this.cartItems.subTotal * this.cartItems.tax
+    }
+  }
+}
+</script>
