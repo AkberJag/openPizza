@@ -8,7 +8,9 @@
       </div>
       <div class="col p-2 bg-secondary">
         <transition name="component" mode="out-in">
-          <component :is="rightPaneComponent"></component>
+          <KeepAlive>
+            <component @changeComponent="changeComponent" :is="rightPaneComponent"></component>
+          </KeepAlive>
         </transition>
       </div>
     </div>
@@ -18,13 +20,19 @@
 <script>
 import BillPane from '@/components/home/BillPane.vue'
 import MenuPane from '@/components/home/MenuPane.vue'
+import OrderComplete from '@/components/home/OrderComplete.vue'
 
 export default {
-  components: { BillPane, MenuPane },
+  components: { BillPane, MenuPane, OrderComplete },
   data() {
     return {
-      leftPaneComponent: MenuPane,
-      rightPaneComponent: BillPane
+      leftPaneComponent: 'MenuPane',
+      rightPaneComponent: 'BillPane'
+    }
+  },
+  methods: {
+    changeComponent(payload) {
+      this.rightPaneComponent = payload
     }
   }
 }
