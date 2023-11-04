@@ -24,5 +24,8 @@ export default {
     // clear all items in the cart and set the total to 0
     state.currentCart.subTotal = 0
     state.currentCart.items = []
+  },
+  setTax(state, taxAmnt) {
+    state.currentCart.tax = taxAmnt
   }
 }
