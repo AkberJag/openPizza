@@ -121,6 +121,7 @@
                     type="button"
                     class="btn btn-danger col-8"
                     :class="{ disabled: totalItems === 0 }"
+                    @click="$emit('changeComponent', 'OrderComplete')"
                   >
                     Pay
                   </button>
@@ -144,7 +145,7 @@ export default {
   data() {
     return {
       toggleTax: false,
-      taxPercentage: 0.2,
+      taxPercentage: 0.25,
       totalItems: 0,
 
       subTotal_tweened: 0,
@@ -155,6 +156,9 @@ export default {
   methods: {
     clearBill() {
       this.$store.commit('foodData/clearCurrentCart')
+    },
+    setTax() {
+      this.$store.commit('foodData/setTax')
     }
   },
 
@@ -166,7 +170,7 @@ export default {
     },
     subTotal() {
       return this.toggleTax
-        ? this.cartItems.subTotal + this.cartItems.subTotal * this.taxPercentage
+        ? this.cartItems.subTotal + this.cartItems.subTotal * this.cartItems.tax
         : this.cartItems.subTotal
     },
     taxAmount() {
@@ -180,6 +184,13 @@ export default {
     },
     taxAmount(n) {
       gsap.to(this, { duration: 0.5, taxAmount_tweened: Number(n) || 0 })
+    },
+    toggleTax(n) {
+      if (n) {
+        this.$store.commit('foodData/setTax', this.taxPercentage)
+      } else {
+        this.$store.commit('foodData/setTax', 0)
+      }
     }
   }
 }
