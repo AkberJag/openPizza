@@ -5,7 +5,7 @@ export default {
   state() {
     return {
       errors: [{ message: 'test', strongMessage: 'St' }],
-      theme: 'light'
+      theme: localStorage.getItem('theme') || 'light'
     }
   },
   mutations,
