@@ -2,6 +2,16 @@
   <div class="container-fluid p-0">
     <div class="row row-cols-md-2">
       <div class="col p-2">
+        <transition name="overlay">
+          <div
+            class="overlay h-100 col text-danger-emphasis"
+            v-if="rightPaneComponent === 'OrderComplete'"
+          >
+            <span class="bg-body-tertiary bg-opacity-10">
+              Cancel the current bill to add more items
+            </span>
+          </div>
+        </transition>
         <transition name="component" mode="out-in">
           <component :is="leftPaneComponent"></component>
         </transition>
@@ -61,5 +71,28 @@ img {
 }
 .component-leave-active {
   transition: all 0.3s ease-out;
+}
+
+/* test style */
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 47%;
+  z-index: 2;
+  background: rgba(39, 42, 43, 0.5);
+  border-radius: 0px;
+  margin: -10px 0 0 -1px;
+}
+.overlay-enter-active,
+.overlay-leave-active {
+  transition: opacity 0.5s;
+}
+
+.overlay-enter,
+.overlay-leave-to {
+  opacity: 0;
 }
 </style>
