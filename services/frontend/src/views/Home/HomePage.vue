@@ -2,18 +2,8 @@
   <div class="container-fluid p-0">
     <div class="row row-cols-md-2">
       <div class="col p-2">
-        <transition name="overlay">
-          <div
-            class="overlay h-100 col text-danger-emphasis"
-            v-if="rightPaneComponent === 'OrderComplete'"
-          >
-            <span class="bg-body-tertiary bg-opacity-10">
-              Cancel the current bill to add more items
-            </span>
-          </div>
-        </transition>
         <transition name="component" mode="out-in">
-          <component :is="leftPaneComponent"></component>
+          <component @changeComponent="changeComponent" :is="leftPaneComponent"></component>
         </transition>
       </div>
       <div class="col p-2 bg-secondary">
@@ -32,8 +22,15 @@ import BillPane from '@/components/home/BillPane.vue'
 import MenuPane from '@/components/home/MenuPane.vue'
 import OrderComplete from '@/components/home/OrderComplete.vue'
 
+import { computed } from 'vue'
+
 export default {
   components: { BillPane, MenuPane, OrderComplete },
+  provide() {
+    return {
+      leftPaneComponent: computed(() => this.leftPaneComponent)
+    }
+  },
   data() {
     return {
       leftPaneComponent: 'MenuPane',
@@ -42,7 +39,7 @@ export default {
   },
   methods: {
     changeComponent(payload) {
-      this.rightPaneComponent = payload
+      this.leftPaneComponent = payload
     }
   }
 }
@@ -82,7 +79,6 @@ img {
   position: absolute;
   width: 47%;
   z-index: 2;
-  background: rgba(39, 42, 43, 0.5);
   border-radius: 0px;
   margin: -10px 0 0 -1px;
 }

@@ -7,7 +7,7 @@
             <div class="text-end p-1 d-flex justify-content-end">
               <div
                 class="d-inline mx-3 text-body-secondary cursorPointer"
-                @click="$emit('changeComponent', 'BillPane')"
+                @click="$emit('changeComponent', 'MenuPane')"
               >
                 <i class="bi bi-x-square"></i> Cancel
               </div>

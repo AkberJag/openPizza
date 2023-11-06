@@ -103,6 +103,7 @@
                       role="switch"
                       id="flexSwitchCheckChecked"
                       v-model="toggleTax"
+                      :disabled="leftPaneComponent === 'OrderComplete'"
                     />
                   </div>
                   <div class="text-dark-emphasis me-2 pe-2" :class="{ 'fw-bold': toggleTax }">
@@ -113,14 +114,14 @@
                   <button
                     type="button"
                     class="btn btn-secondary col-4"
-                    :class="{ disabled: totalItems === 0 }"
+                    :class="{ disabled: disabledAmntBtns }"
                   >
                     Hold
                   </button>
                   <button
                     type="button"
                     class="btn btn-danger col-8"
-                    :class="{ disabled: totalItems === 0 }"
+                    :class="{ disabled: disabledAmntBtns }"
                     @click="$emit('changeComponent', 'OrderComplete')"
                   >
                     Pay
@@ -141,6 +142,7 @@ import gsap from 'gsap'
 import BillItem from './BillItem.vue'
 export default {
   components: { BillItem },
+  inject: ['leftPaneComponent'],
 
   data() {
     return {
@@ -175,6 +177,9 @@ export default {
     },
     taxAmount() {
       return this.cartItems.subTotal * this.taxPercentage
+    },
+    disabledAmntBtns() {
+      return this.totalItems === 0 || this.leftPaneComponent === 'OrderComplete'
     }
   },
 
