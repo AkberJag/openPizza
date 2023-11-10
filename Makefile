@@ -22,6 +22,10 @@ clean:
 # $(DOCKER_PATH) rm -rf $(ALEMBIC_DIR)/versions/*
 	$(DOCKER_PATH) find $(ALEMBIC_DIR)/versions/ -maxdepth 1 -type f -delete
 
+stamp_h:
+	$(DOCKER_PATH) alembic stamp head
+
+
 build:
 	docker-compose up -d --build
 
