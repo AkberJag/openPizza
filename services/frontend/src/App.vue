@@ -35,8 +35,8 @@ export default {
     Array.from(document.querySelectorAll('button[data-bs-toggle="popover"]')).forEach(
       (popoverNode) => new Popover(popoverNode)
     )
-    //inti toast
-    // Array.from(document.querySelectorAll('.toast')).forEach((toastNode) => new Toast(toastNode))
+    //init toast
+    Array.from(document.querySelectorAll('.toast')).forEach((toastNode) => new Toast(toastNode))
   },
   methods: {
     themeChange(val) {
