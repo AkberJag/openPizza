@@ -30,5 +30,33 @@ export default {
 
     const responseData = await response.json()
     context.commit('setItems', { id: payload, data: responseData })
+  },
+
+  async orderComplete(context) {
+    let url = 'http://localhost:5000/api/v1/order/'
+
+    let currentCart = context.getters['getCurrentCart']
+    const items = currentCart.items.map((item) => ({
+      product_id: item.tem_id,
+      quantity: item.qty,
+      price_per_unit: item.price,
+      item_notes: '',
+      product_name: item.item_name
+    }))
+
+    let body = JSON.stringify({
+      tax_val: currentCart.tax,
+      order_notes: 'No notes for now',
+      order_items: items
+    })
+    let headers = { 'Content-Type': 'application/json' }
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers,
+      body
+    })
+
+    context.commit('clearCurrentCart')
   }
 }
