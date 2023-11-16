@@ -10,7 +10,6 @@ class OrderBase(BaseModel):
     """shared properties"""
 
     tax_val: None | float = None
-    tax_enabled: bool = False
     order_notes: None | str = None
 
 

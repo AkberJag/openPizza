@@ -24,7 +24,6 @@ class Order(Base):
     order_id = Column(Integer, primary_key=True, index=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     tax_val = Column(Integer, default=0)
-    tax_enabled = Column(Boolean, default=False)
     order_notes = Column(Text)
 
     order_items = relationship("OrderItems", back_populates="order")
