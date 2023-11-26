@@ -33,7 +33,9 @@
           <div class="h-25">
             <div class="d-grid gap-2 mx-2 pt-3">
               <button class="btn btn-danger" type="button">Print Receipt</button>
-              <button class="btn btn-outline-danger" type="button">Close</button>
+              <button class="btn btn-outline-danger" type="button" @click="orderComplete">
+                Close
+              </button>
             </div>
           </div>
         </div>
@@ -52,6 +54,12 @@ export default {
     },
     total() {
       return this.cartItems.subTotal + this.cartItems.subTotal * this.cartItems.tax
+    }
+  },
+  methods: {
+    async orderComplete() {
+      await this.$store.dispatch('foodData/orderComplete')
+      this.$emit('changeComponent', 'MenuPane')
     }
   }
 }
