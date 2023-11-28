@@ -22,8 +22,8 @@
       </li>
       <!-- orders -->
       <li>
-        <a
-          href="#"
+        <router-link
+          :to="{ name: 'OrdersRoute' }"
           class="nav-link py-3 border-bottom"
           title=""
           data-bs-toggle="tooltip"
@@ -31,7 +31,7 @@
           data-bs-original-title="Dashboard"
         >
           <i class="bi bi-journals"></i>
-        </a>
+        </router-link>
       </li>
       <!-- Customers -->
       <li>
