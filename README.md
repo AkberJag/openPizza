@@ -13,9 +13,6 @@ make build
 
 when the containers are running, do the alembic migration
 ```
-make init
-```
-```
 make migrate
 ```
 
