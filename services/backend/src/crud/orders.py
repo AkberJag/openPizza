@@ -5,7 +5,7 @@ from src.models.order import Order, OrderItems
 from src.schemas.order import OrderCreate, OrderUpdate
 
 
-class CRUDFoodItem(CRUDBase[Order, OrderCreate, OrderUpdate]):
+class CRUDOrder(CRUDBase[Order, OrderCreate, OrderUpdate]):
     def create_order(self, db: Session, *, order: OrderCreate):
         """Create order and order items"""
         order_data = order.model_dump()
@@ -23,4 +23,4 @@ class CRUDFoodItem(CRUDBase[Order, OrderCreate, OrderUpdate]):
         return order
 
 
-crud_order = CRUDFoodItem(Order)
+crud_order = CRUDOrder(Order)
