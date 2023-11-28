@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import HomePage from '@/views/home/HomePage.vue'
+import OrdersPage from '@/views/home/OrdersPage.vue'
 import UserLogin from '@/views/auth/UserLogin.vue'
 import UserRegister from '@/views/auth/UserRegister.vue'
 
@@ -11,6 +12,12 @@ const routes = [
     path: '/',
     name: 'HomeRoute',
     component: HomePage,
+    meta: { authRequired: true }
+  },
+  {
+    path: '/orders',
+    name: 'OrdersRoute',
+    component: OrdersPage,
     meta: { authRequired: true }
   },
   {
