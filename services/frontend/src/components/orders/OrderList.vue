@@ -46,5 +46,14 @@
         </div>
       </div>
     </div>
+
+    <!-- card contents -->
+    <div class="card-body p-1" style="overflow: hidden">
+      <div class="container-fluid">
+        <div class="row row-cols-md-1" style="height: calc(100vh - 85px)">
+          <div class="col h-100 p-0" style="overflow: auto"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
