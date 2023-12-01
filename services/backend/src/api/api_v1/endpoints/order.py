@@ -17,3 +17,13 @@ router = APIRouter()
 @router.post("/")
 async def make_order(order: OrderCreate, db: Session = Depends(get_db)):
     return crud_order.create_order(db, order=order)
+
+
+@router.get("/all")
+async def get_all_orders(db: Session = Depends(get_db)):
+    return crud_order.get_multi(db)
+
+
+@router.get("/{order_id}")
+async def get_order_items(order_id: int, db: Session = Depends(get_db)):
+    return crud_order.get_order_items(db, order_id=order_id)
