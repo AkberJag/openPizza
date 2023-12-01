@@ -22,5 +22,10 @@ class CRUDOrder(CRUDBase[Order, OrderCreate, OrderUpdate]):
         db.refresh(db_order_obj)
         return order
 
+    def get_order_items(self, db: Session, *, order_id: int):
+        items = db.query(OrderItems).filter(OrderItems.order_id == order_id).all()
+        print(len(items))
+        return items
+
 
 crud_order = CRUDOrder(Order)
