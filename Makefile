@@ -27,6 +27,6 @@ stamp_h:
 
 
 build:
-	docker-compose up -d --build
+	docker compose up -d --build
 
 .PHONY: init revision migrate downgrade clean build
