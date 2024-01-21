@@ -122,10 +122,14 @@ export default {
     // Auto Login using the stored cookie
     let endpoint = 'user/me'
 
-    const response = await apiRequest(endpoint, { method: 'GET', credentials: 'include' })
-    const responseData = await response.json()
-    if (responseData.is_active === true && response.ok) {
-      context.commit('setUser', { isLoggedIn: true, username: responseData.name })
+    try {
+      const response = await apiRequest(endpoint, { method: 'GET', credentials: 'include' })
+      const responseData = await response.json()
+      if (responseData.is_active === true && response.ok) {
+        context.commit('setUser', { isLoggedIn: true, username: responseData.name })
+      }
+    } catch (error) {
+      console.error('error:', error)
     }
   }
 }
