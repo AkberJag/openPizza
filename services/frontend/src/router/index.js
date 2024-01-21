@@ -1,34 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomePage from '@/views/home/HomePage.vue'
-import OrdersPage from '@/views/home/OrdersPage.vue'
-import UserLogin from '@/views/auth/UserLogin.vue'
-import UserRegister from '@/views/auth/UserRegister.vue'
-
 import store from '../store/index.js'
 
 const routes = [
   {
+    path: '/user/login',
+    component: () => import('../views/auth/LoginPage.vue'),
+    name: 'LoginRoute'
+  },
+  {
+    path: '/user/register',
+    component: () => import('../views/auth/RegisterPage.vue'),
+    name: 'RegisterRoute'
+  },
+  {
     path: '/',
-    name: 'HomeRoute',
-    component: HomePage,
+    name: 'MenuRoute',
+    component: () => import('../views/menu/OrderMenu.vue'),
     meta: { authRequired: true }
   },
   {
     path: '/orders',
     name: 'OrdersRoute',
-    component: OrdersPage,
+    component: () => import('../views/orders/OrdersPlaced.vue'),
     meta: { authRequired: true }
   },
   {
-    path: '/user/login',
-    component: UserLogin,
-    name: 'LoginRoute'
-  },
-  {
-    path: '/user/register',
-    component: UserRegister,
-    name: 'RegisterRoute'
+    path: '/items/add',
+    name: 'AddItemsRoute',
+    component: () => import('../views/admin/categoryAndItems/AddItem.vue'),
+    meta: { authRequired: true }
   }
 ]
 
@@ -46,6 +47,11 @@ router.beforeEach(async (to, from, next) => {
       next()
     } else {
       next({ name: 'LoginRoute' })
+      store.commit('addToast', {
+        toastTitle: 'Not logged in',
+        toastBody: `Please login to access that content.`,
+        toastClass: 'danger'
+      })
     }
   } else {
     next()

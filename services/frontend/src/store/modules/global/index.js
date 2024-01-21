@@ -1,14 +1,13 @@
-import mutations from './mutations'
 import getters from './getters'
+import mutations from './mutations'
 
 export default {
   state() {
     return {
-      errors: [{ message: 'test', strongMessage: 'St' }],
-      toasts: [{ toastTitle: 'Test toast', toastBody: 'This is a test toast' }],
+      toasts: [],
       theme: localStorage.getItem('theme') || 'light'
     }
   },
-  mutations,
-  getters
+  getters,
+  mutations
 }

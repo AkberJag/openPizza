@@ -4,5 +4,8 @@ export default {
   },
   getuserName(state) {
     return state.userName
-  }
+  },
+  getLoginInStatus(state) {
+    return state.isLogginProcess
+  },
 }

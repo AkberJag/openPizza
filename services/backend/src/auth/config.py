@@ -1,11 +1,8 @@
 """Local Auth config"""
 
 import os
+
 from pydantic import BaseModel
-
-from dotenv import load_dotenv
-
-load_dotenv()
 
 
 class AuthConfig(BaseModel):
@@ -13,7 +10,7 @@ class AuthConfig(BaseModel):
 
     JWT_ALG: str = "HS256"
     JWT_SECRET: str = os.getenv("JWT_SECRET_KEY", "SuperSecretKey")
-    # 60 minutes * 24 hours * 8 days = 8 days
+    # 60 minutes * 24 hours * 8 days = 8 days in minutes
     JWT_EXP: int = 60 * 24 * 8
 
 
