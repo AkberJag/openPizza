@@ -2,7 +2,7 @@
 
 # Variables
 ALEMBIC_DIR := alembic
-DOCKER_PATH := docker exec -w /app/src openpizza-backend-1
+DOCKER_PATH := docker exec -w /app openpizza-backend-1
 m := Create new tables # migration message
 
 # Commands
