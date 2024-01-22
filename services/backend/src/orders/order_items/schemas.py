@@ -8,7 +8,7 @@ class OrderItemBase(BaseModel):
 
     name: None | str = None
     quantity: None | int = Field(gt=0)
-    price_per_unit: None | int = Field(gt=0)
+    price_per_unit: None | float = Field(gt=0)
     item_notes: None | str = None
 
 
