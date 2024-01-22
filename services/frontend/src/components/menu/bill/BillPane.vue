@@ -67,7 +67,7 @@
         <div class="row mb-auto">
           <div
             class="col overflow-auto"
-            style="max-height: calc((100vh - 100px) / 3); overflow: auto; min-height: 100px"
+            style="max-height: calc(100vh / 2.4); overflow: auto; min-height: 100px"
           >
             <div v-if="currentCart.items[0]">
               <ul class="list-group list-group-flush">
