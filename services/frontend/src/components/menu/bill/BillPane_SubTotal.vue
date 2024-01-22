@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-        <div :class="toggleTax ? 'fw-semibold' : 'text-muted'">${{ taxAmount }}</div>
+        <div :class="toggleTax ? 'fw-semibold' : 'text-muted'">${{ taxAmount.toFixed(2) }}</div>
       </li>
     </ul>
     <div class="hstack gap-2 mt-3">
