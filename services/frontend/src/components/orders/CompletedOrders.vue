@@ -30,7 +30,7 @@
                   }}
                 </td>
                 <td>{{ order.order_notes }}</td>
-                <td>${{ order.order_total }}</td>
+                <td>${{ order.order_total.toFixed(2) }}</td>
                 <!-- <td>{{ order }}</td> -->
               </tr>
             </tbody>
