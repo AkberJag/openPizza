@@ -55,7 +55,7 @@
           </li>
         </ul>
         <div class="mt-5 fs-5 fw-bold">Make {{ paymentMethod }} payment</div>
-        <div class="mt-2 fs-1 fw-bold">${{ total }}</div>
+        <div class="mt-2 fs-1 fw-bold">${{ total.toFixed(2) }}</div>
         <div class="mt-auto d-grid gap-2">
           <button class="btn btn-danger">Print Receipt</button>
           <button type="button" class="btn btn-outline-danger" @click="placeOrder">Complete</button>
