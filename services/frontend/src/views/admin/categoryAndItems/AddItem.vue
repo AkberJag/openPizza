@@ -1,5 +1,5 @@
 <template>
-  <div class="h-100 p-3">
+  <div class="vh-100 p-3">
     <!-- Modal -->
     <div
       class="modal fade"
@@ -67,12 +67,12 @@
       </div>
     </div>
 
-    <div class="card h-100 shadow">
+    <div class="card h-100 shadow pb-2">
       <div class="container-fluid h-100">
         <div class="row h-100 py-2">
-          <div class="col">
+          <div class="col h-100">
             <div class="card h-100 shadow-sm">
-              <div class="card-body">
+              <div class="card-body h-100 overflow-auto">
                 <div
                   class="card text-center p-3 shadow-sm cursor-pointer mb-4"
                   v-for="(item, index) in allCategories"
@@ -92,10 +92,14 @@
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col h-100">
             <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <div class="card p-4 px-3 shadow-sm" v-for="(item, index) in items" :key="index">
+              <div class="card-body h-100 overflow-auto">
+                <div
+                  class="card p-4 px-3 mb-4 shadow-sm"
+                  v-for="(item, index) in items"
+                  :key="index"
+                >
                   <div class="d-flex">
                     <div class="fw-bold">{{ item.name }}</div>
                     <div class="ms-auto">${{ item.price }}</div>
