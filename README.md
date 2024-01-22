@@ -38,3 +38,5 @@ make addfake
 
 run the VueJs frontend > http://localhost:8080
 run the Swagger UI > http://localhost:5000/docs
+
+### [Screenshots](https://github.com/AkberJag/openPizza/tree/main/services/screenshots)
