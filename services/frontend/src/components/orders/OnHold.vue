@@ -19,7 +19,7 @@
           <td>{{ order.orderType }}</td>
           <td>{{ order.customer }}</td>
           <td>{{ order.items.length }}</td>
-          <td>${{ order.subTotal }}</td>
+          <td>${{ order.subTotal.toFixed(2) }}</td>
           <td>{{ Math.floor(Math.random() * 40) }} minutes</td>
           <td class="text-success">
             <i class="bi bi-cash-stack me-2"></i>
