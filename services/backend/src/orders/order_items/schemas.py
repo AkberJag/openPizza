@@ -17,7 +17,7 @@ class OrderItemCreate(OrderItemBase):
 
     name: str
     quantity: int
-    price_per_unit: int
+    price_per_unit: float
     item_id: int
 
 
