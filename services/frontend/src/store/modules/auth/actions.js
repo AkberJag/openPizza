@@ -1,4 +1,5 @@
 import router from '@/router/index.js'
+import { BASE_URL } from '../../api.js'
 import apiRequest from '../../api.js'
 
 export default {
@@ -12,7 +13,7 @@ export default {
       })
       const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
 
-      const response = await apiRequest(endpoint, {
+      const response = await fetch(`${BASE_URL}/${endpoint}`, {
         credentials: 'include',
         method: 'POST',
         headers,

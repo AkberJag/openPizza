@@ -1,6 +1,6 @@
 // a central API handler / customer fetch function
 import store from './index.js'
-const BASE_URL = 'http://localhost:5000'
+export const BASE_URL = 'http://localhost:5000'
 
 async function apiRequest(endpoint, options) {
   const response = await fetch(`${BASE_URL}/${endpoint}`, options)
