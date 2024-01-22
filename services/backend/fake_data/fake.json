@@ -1,0 +1,774 @@
+{
+    "categories": [
+        {
+            "category": "Appetizers",
+            "items": [
+                {
+                    "name": "Spring Rolls",
+                    "price": 8.99,
+                    "description": "Crispy vegetable spring rolls with a sweet chili dipping sauce"
+                },
+                {
+                    "name": "Stuffed Mushrooms",
+                    "price": 10.50,
+                    "description": "Mushroom caps filled with a savory blend of herbs and cheese"
+                },
+                {
+                    "name": "Bruschetta",
+                    "price": 7.99,
+                    "description": "Toasted baguette topped with diced tomatoes, basil, and balsamic glaze"
+                },
+                {
+                    "name": "Nachos",
+                    "price": 9.75,
+                    "description": "Tortilla chips topped with melted cheese, jalapeños, and sour cream"
+                },
+                {
+                    "name": "Spinach Artichoke Dip",
+                    "price": 11.25,
+                    "description": "Creamy dip with spinach, artichokes, and melted cheese served with tortilla chips"
+                },
+                {
+                    "name": "Mozzarella Sticks",
+                    "price": 8.50,
+                    "description": "Breaded and fried mozzarella sticks with marinara sauce"
+                },
+                {
+                    "name": "Garlic Knots",
+                    "price": 6.99,
+                    "description": "Soft knots of pizza dough brushed with garlic butter"
+                },
+                {
+                    "name": "Chicken Wings",
+                    "price": 12.99,
+                    "description": "Crispy chicken wings tossed in your choice of sauce"
+                },
+                {
+                    "name": "Shrimp Cocktail",
+                    "price": 14.50,
+                    "description": "Chilled shrimp served with tangy cocktail sauce"
+                },
+                {
+                    "name": "Caprese Skewers",
+                    "price": 9.75,
+                    "description": "Cherry tomatoes, fresh mozzarella, and basil drizzled with balsamic glaze on skewers"
+                }
+            ]
+        },
+        {
+            "category": "Salads",
+            "items": [
+                {
+                    "name": "Caesar Salad",
+                    "price": 12.99,
+                    "description": "Fresh romaine lettuce, croutons, and Parmesan cheese with Caesar dressing"
+                },
+                {
+                    "name": "Greek Salad",
+                    "price": 11.50,
+                    "description": "Crisp lettuce, tomatoes, cucumbers, olives, and feta cheese with Greek dressing"
+                },
+                {
+                    "name": "Cobb Salad",
+                    "price": 14.99,
+                    "description": "Grilled chicken, bacon, avocado, blue cheese, and tomatoes on mixed greens"
+                },
+                {
+                    "name": "Asian Sesame Chicken Salad",
+                    "price": 13.75,
+                    "description": "Grilled chicken, mixed greens, mandarin oranges, and sesame dressing"
+                },
+                {
+                    "name": "Caprese Salad",
+                    "price": 10.99,
+                    "description": "Fresh tomatoes, mozzarella, and basil drizzled with olive oil"
+                },
+                {
+                    "name": "Chicken Caesar Salad",
+                    "price": 13.25,
+                    "description": "Grilled chicken, romaine lettuce, croutons, and Parmesan cheese with Caesar dressing"
+                },
+                {
+                    "name": "Spinach Salad",
+                    "price": 11.50,
+                    "description": "Baby spinach, bacon, mushrooms, and red onion with balsamic vinaigrette"
+                },
+                {
+                    "name": "Fruit Salad",
+                    "price": 9.99,
+                    "description": "Assorted fresh fruits served in a bowl"
+                },
+                {
+                    "name": "Quinoa Salad",
+                    "price": 12.50,
+                    "description": "Quinoa, cherry tomatoes, cucumber, and feta with lemon vinaigrette"
+                },
+                {
+                    "name": "Tuna Salad",
+                    "price": 11.75,
+                    "description": "Flaked tuna, mixed greens, cherry tomatoes, and olives with Italian dressing"
+                }
+            ]
+        },
+        {
+            "category": "Main Dishes",
+            "items": [
+                {
+                    "name": "Grilled Salmon",
+                    "price": 18.99,
+                    "description": "Freshly grilled salmon fillet with lemon butter sauce"
+                },
+                {
+                    "name": "Chicken Parmesan",
+                    "price": 16.50,
+                    "description": "Breaded and baked chicken topped with marinara sauce and melted cheese"
+                },
+                {
+                    "name": "Beef Stir-Fry",
+                    "price": 17.99,
+                    "description": "Tender beef strips with mixed vegetables in a savory soy-based sauce"
+                },
+                {
+                    "name": "Vegetarian Lasagna",
+                    "price": 15.75,
+                    "description": "Layers of pasta, ricotta, marinara, and assorted vegetables"
+                },
+                {
+                    "name": "Shrimp Scampi",
+                    "price": 19.50,
+                    "description": "Sautéed shrimp in a garlic and lemon butter sauce served over pasta"
+                },
+                {
+                    "name": "Penne alla Vodka",
+                    "price": 16.99,
+                    "description": "Penne pasta in a creamy vodka tomato sauce"
+                },
+                {
+                    "name": "BBQ Ribs",
+                    "price": 21.99,
+                    "description": "Slow-cooked ribs glazed with barbecue sauce"
+                },
+                {
+                    "name": "Vegetable Curry",
+                    "price": 15.25,
+                    "description": "Assorted vegetables in a rich and flavorful curry sauce served with rice"
+                },
+                {
+                    "name": "Margherita Pizza",
+                    "price": 14.50,
+                    "description": "Classic pizza with tomato sauce, fresh mozzarella, and basil"
+                },
+                {
+                    "name": "Beef Tacos",
+                    "price": 12.99,
+                    "description": "Soft tacos filled with seasoned beef, lettuce, and cheese"
+                }
+            ]
+        },
+        {
+            "category": "Desserts",
+            "items": [
+                {
+                    "name": "Chocolate Fondue",
+                    "price": 9.99,
+                    "description": "Melted chocolate served with assorted fruits and marshmallows for dipping"
+                },
+                {
+                    "name": "New York Cheesecake",
+                    "price": 8.50,
+                    "description": "Classic creamy cheesecake with a graham cracker crust"
+                },
+                {
+                    "name": "Tiramisu",
+                    "price": 10.75,
+                    "description": "Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream"
+                },
+                {
+                    "name": "Apple Pie",
+                    "price": 7.99,
+                    "description": "Homemade apple pie with a flaky crust"
+                },
+                {
+                    "name": "Chocolate Lava Cake",
+                    "price": 11.50,
+                    "description": "Warm chocolate cake with a gooey molten center"
+                },
+                {
+                    "name": "Strawberry Shortcake",
+                    "price": 9.25,
+                    "description": "Layers of sponge cake, fresh strawberries, and whipped cream"
+                },
+                {
+                    "name": "Panna Cotta",
+                    "price": 8.99,
+                    "description": "Italian dessert of sweetened cream set with gelatin"
+                },
+                {
+                    "name": "Creme Brulee",
+                    "price": 10.50,
+                    "description": "Rich custard topped with a layer of caramelized sugar"
+                },
+                {
+                    "name": "Key Lime Pie",
+                    "price": 8.75,
+                    "description": "Tart and tangy key lime pie with a graham cracker crust"
+                },
+                {
+                    "name": "Mango Sorbet",
+                    "price": 7.50,
+                    "description": "Refreshing mango-flavored sorbet"
+                }
+            ]
+        },
+        {
+            "category": "Beverages",
+            "items": [
+                {
+                    "name": "Classic Mojito",
+                    "price": 8.99,
+                    "description": "Rum, mint, lime, and simple syrup served over ice"
+                },
+                {
+                    "name": "Iced Caramel Latte",
+                    "price": 5.50,
+                    "description": "Espresso, caramel syrup, and milk over ice"
+                },
+                {
+                    "name": "Berry Blast Smoothie",
+                    "price": 6.99,
+                    "description": "Mixed berries, yogurt, and honey blended into a smoothie"
+                },
+                {
+                    "name": "Mango Tango Lemonade",
+                    "price": 4.75,
+                    "description": "Fresh mango puree, lemonade, and a splash of soda"
+                },
+                {
+                    "name": "Hot Chocolate",
+                    "price": 3.99,
+                    "description": "Rich and creamy hot chocolate topped with whipped cream"
+                },
+                {
+                    "name": "Sparkling Water",
+                    "price": 2.50,
+                    "description": "Carbonated water with a hint of lemon"
+                },
+                {
+                    "name": "Cucumber Mint Cooler",
+                    "price": 5.25,
+                    "description": "Cucumber and mint muddled with lime juice and soda"
+                },
+                {
+                    "name": "Green Tea",
+                    "price": 2.99,
+                    "description": "Steeped green tea served hot or iced"
+                },
+                {
+                    "name": "Fresh Squeezed Orange Juice",
+                    "price": 4.50,
+                    "description": "Naturally sweet orange juice freshly squeezed to order"
+                },
+                {
+                    "name": "Cappuccino",
+                    "price": 6.25,
+                    "description": "Espresso with equal parts steamed milk and frothed milk"
+                }
+            ]
+        },
+        {
+            "category": "Sandwiches",
+            "items": [
+                {
+                    "name": "Turkey Club Sandwich",
+                    "price": 10.99,
+                    "description": "Sliced turkey, bacon, lettuce, tomato, and mayo on toasted bread"
+                },
+                {
+                    "name": "BLT Sandwich",
+                    "price": 9.50,
+                    "description": "Crispy bacon, lettuce, tomato, and mayo on toasted bread"
+                },
+                {
+                    "name": "Vegetarian Panini",
+                    "price": 8.75,
+                    "description": "Grilled vegetables, mozzarella, and pesto on ciabatta bread"
+                },
+                {
+                    "name": "Grilled Cheese Sandwich",
+                    "price": 7.99,
+                    "description": "Melted cheddar and Swiss cheese on grilled sourdough bread"
+                },
+                {
+                    "name": "Chicken Club Wrap",
+                    "price": 11.25,
+                    "description": "Grilled chicken, bacon, lettuce, tomato, and ranch dressing in a wrap"
+                },
+                {
+                    "name": "Caprese Panini",
+                    "price": 9.75,
+                    "description": "Tomato, fresh mozzarella, basil, and balsamic glaze on ciabatta bread"
+                },
+                {
+                    "name": "Roast Beef Sub",
+                    "price": 12.50,
+                    "description": "Sliced roast beef, provolone cheese, lettuce, and horseradish mayo on a sub roll"
+                },
+                {
+                    "name": "Egg Salad Sandwich",
+                    "price": 8.50,
+                    "description": "Homemade egg salad with lettuce on whole grain bread"
+                },
+                {
+                    "name": "Tuna Melt",
+                    "price": 10.25,
+                    "description": "Tuna salad, melted cheese, and tomato on grilled rye bread"
+                },
+                {
+                    "name": "Cubano Sandwich",
+                    "price": 11.99,
+                    "description": "Roast pork, ham, Swiss cheese, pickles, and mustard on pressed Cuban bread"
+                }
+            ]
+        },
+        {
+            "category": "Pasta",
+            "items": [
+                {
+                    "name": "Spaghetti Bolognese",
+                    "price": 14.99,
+                    "description": "Spaghetti with rich meat sauce and Parmesan cheese"
+                },
+                {
+                    "name": "Fettuccine Alfredo",
+                    "price": 13.50,
+                    "description": "Fettuccine pasta in a creamy Alfredo sauce"
+                },
+                {
+                    "name": "Pesto Pasta",
+                    "price": 12.75,
+                    "description": "Penne pasta with basil pesto, cherry tomatoes, and pine nuts"
+                },
+                {
+                    "name": "Lobster Ravioli",
+                    "price": 18.50,
+                    "description": "Ravioli stuffed with lobster and served in a tomato cream sauce"
+                },
+                {
+                    "name": "Chicken Marsala",
+                    "price": 16.25,
+                    "description": "Chicken breast in a Marsala wine sauce with mushrooms served over linguine"
+                },
+                {
+                    "name": "Shrimp Alfredo",
+                    "price": 17.99,
+                    "description": "Grilled shrimp in a creamy Alfredo sauce over fettuccine"
+                },
+                {
+                    "name": "Carbonara",
+                    "price": 15.50,
+                    "description": "Spaghetti with pancetta, eggs, and Parmesan cheese"
+                },
+                {
+                    "name": "Vegetable Lasagna",
+                    "price": 14.75,
+                    "description": "Lasagna with layers of vegetables, marinara, and melted cheese"
+                },
+                {
+                    "name": "Clam Linguine",
+                    "price": 16.99,
+                    "description": "Linguine with tender clams in a garlic and white wine sauce"
+                },
+                {
+                    "name": "Wild Mushroom Risotto",
+                    "price": 18.25,
+                    "description": "Creamy risotto with a medley of wild mushrooms"
+                }
+            ]
+        },
+        {
+            "category": "Breakfast",
+            "items": [
+                {
+                    "name": "Classic Pancakes",
+                    "price": 9.99,
+                    "description": "Fluffy pancakes served with maple syrup and butter"
+                },
+                {
+                    "name": "Eggs Benedict",
+                    "price": 11.50,
+                    "description": "Poached eggs, Canadian bacon, and hollandaise sauce on an English muffin"
+                },
+                {
+                    "name": "Vegetarian Omelette",
+                    "price": 10.75,
+                    "description": "Egg omelette with mushrooms, peppers, onions, and cheese"
+                },
+                {
+                    "name": "French Toast",
+                    "price": 8.50,
+                    "description": "Thick slices of bread dipped in egg batter and grilled, served with powdered sugar"
+                },
+                {
+                    "name": "Breakfast Burrito",
+                    "price": 9.75,
+                    "description": "Scrambled eggs, sausage, cheese, and salsa wrapped in a tortilla"
+                },
+                {
+                    "name": "Belgian Waffles",
+                    "price": 10.99,
+                    "description": "Golden brown waffles served with fresh berries and whipped cream"
+                },
+                {
+                    "name": "Smoked Salmon Bagel",
+                    "price": 12.25,
+                    "description": "Toasted bagel with cream cheese, smoked salmon, and capers"
+                },
+                {
+                    "name": "Greek Yogurt Parfait",
+                    "price": 7.99,
+                    "description": "Layers of Greek yogurt, granola, and mixed berries"
+                },
+                {
+                    "name": "Denver Omelette",
+                    "price": 11.99,
+                    "description": "Egg omelette with ham, bell peppers, onions, and cheese"
+                },
+                {
+                    "name": "Avocado Toast",
+                    "price": 9.50,
+                    "description": "Sliced avocado on toasted whole grain bread with a sprinkle of sea salt"
+                }
+            ]
+        },
+        {
+            "category": "Seafood",
+            "items": [
+                {
+                    "name": "Grilled Sea Bass",
+                    "price": 19.99,
+                    "description": "Flaky sea bass fillet seasoned and grilled to perfection"
+                },
+                {
+                    "name": "Lobster Tail",
+                    "price": 24.50,
+                    "description": "Butter-poached lobster tail served with drawn butter"
+                },
+                {
+                    "name": "Shrimp Scampi Linguine",
+                    "price": 18.75,
+                    "description": "Sautéed shrimp in a garlic and lemon butter sauce over linguine"
+                },
+                {
+                    "name": "Crab Cakes",
+                    "price": 22.99,
+                    "description": "Pan-seared crab cakes with remoulade sauce"
+                },
+                {
+                    "name": "Clam Chowder",
+                    "price": 10.50,
+                    "description": "Creamy New England-style clam chowder with bacon"
+                },
+                {
+                    "name": "Grilled Octopus",
+                    "price": 16.25,
+                    "description": "Tender grilled octopus served with lemon and olive oil"
+                },
+                {
+                    "name": "Seafood Paella",
+                    "price": 23.50,
+                    "description": "Spanish rice dish with a mix of seafood, chicken, and saffron"
+                },
+                {
+                    "name": "Fish Tacos",
+                    "price": 14.99,
+                    "description": "Soft tacos with grilled fish, cabbage slaw, and chipotle mayo"
+                },
+                {
+                    "name": "Oysters Rockefeller",
+                    "price": 18.75,
+                    "description": "Oysters topped with a rich mixture of spinach, herbs, and breadcrumbs"
+                },
+                {
+                    "name": "Tuna Poke Bowl",
+                    "price": 17.50,
+                    "description": "Cubes of fresh tuna marinated in soy and sesame, served over rice"
+                }
+            ]
+        },
+        {
+            "category": "Vegetarian",
+            "items": [
+                {
+                    "name": "Vegetarian Burger",
+                    "price": 12.99,
+                    "description": "Plant-based burger patty with lettuce, tomato, and vegan mayo"
+                },
+                {
+                    "name": "Eggplant Parmesan",
+                    "price": 14.50,
+                    "description": "Baked eggplant slices with marinara sauce and melted cheese"
+                },
+                {
+                    "name": "Vegetable Stir-Fry",
+                    "price": 13.99,
+                    "description": "Assorted vegetables sautéed in a savory stir-fry sauce"
+                },
+                {
+                    "name": "Quinoa Stuffed Bell Peppers",
+                    "price": 11.75,
+                    "description": "Bell peppers filled with a mixture of quinoa, black beans, and vegetables"
+                },
+                {
+                    "name": "Vegetarian Pho",
+                    "price": 10.50,
+                    "description": "Vietnamese noodle soup with tofu, rice noodles, and flavorful broth"
+                },
+                {
+                    "name": "Mushroom Risotto",
+                    "price": 16.25,
+                    "description": "Creamy risotto with a medley of mushrooms and Parmesan cheese"
+                },
+                {
+                    "name": "Vegetarian Enchiladas",
+                    "price": 13.50,
+                    "description": "Tortillas filled with black beans, corn, cheese, and enchilada sauce"
+                },
+                {
+                    "name": "Caprese Pizza",
+                    "price": 14.99,
+                    "description": "Pizza topped with fresh tomatoes, mozzarella, and basil"
+                },
+                {
+                    "name": "Vegetable Curry Bowl",
+                    "price": 12.75,
+                    "description": "A bowl of flavorful vegetable curry served with rice"
+                },
+                {
+                    "name": "Spinach and Feta Stuffed Portobello Mushrooms",
+                    "price": 15.50,
+                    "description": "Portobello mushrooms filled with a mixture of spinach and feta"
+                }
+            ]
+        },
+        {
+            "category": "Mexican",
+            "items": [
+                {
+                    "name": "Chicken Quesadilla",
+                    "price": 13.99,
+                    "description": "Grilled chicken, cheese, and veggies folded in a flour tortilla"
+                },
+                {
+                    "name": "Beef Burrito",
+                    "price": 14.50,
+                    "description": "Seasoned beef, rice, beans, and cheese wrapped in a flour tortilla"
+                },
+                {
+                    "name": "Shrimp Tacos",
+                    "price": 16.25,
+                    "description": "Grilled shrimp, cabbage slaw, and avocado crema in soft corn tortillas"
+                },
+                {
+                    "name": "Chiles Rellenos",
+                    "price": 15.75,
+                    "description": "Poblano peppers stuffed with cheese, battered, and fried"
+                },
+                {
+                    "name": "Chicken Fajitas",
+                    "price": 17.50,
+                    "description": "Sizzling chicken, bell peppers, and onions served with tortillas"
+                },
+                {
+                    "name": "Vegetarian Nachos",
+                    "price": 12.99,
+                    "description": "Tortilla chips topped with black beans, cheese, guacamole, and salsa"
+                },
+                {
+                    "name": "Fish Tostadas",
+                    "price": 14.99,
+                    "description": "Crispy tortillas topped with seasoned fish, lettuce, and chipotle mayo"
+                },
+                {
+                    "name": "Mexican Street Corn",
+                    "price": 8.50,
+                    "description": "Grilled corn on the cob with mayo, cotija cheese, and chili powder"
+                },
+                {
+                    "name": "Pork Tamales",
+                    "price": 15.25,
+                    "description": "Steamed corn masa filled with seasoned pork and wrapped in corn husks"
+                },
+                {
+                    "name": "Mango Salsa",
+                    "price": 7.99,
+                    "description": "Fresh mango, red onion, cilantro, and lime juice served as a salsa"
+                }
+            ]
+        },
+        {
+            "category": "Indian",
+            "items": [
+                {
+                    "name": "Chicken Tikka Masala",
+                    "price": 16.99,
+                    "description": "Grilled chicken in a creamy tomato-based curry sauce"
+                },
+                {
+                    "name": "Vegetable Biryani",
+                    "price": 14.50,
+                    "description": "Fragrant basmati rice with mixed vegetables and aromatic spices"
+                },
+                {
+                    "name": "Palak Paneer",
+                    "price": 15.75,
+                    "description": "Paneer cheese in a spinach-based curry sauce"
+                },
+                {
+                    "name": "Butter Chicken",
+                    "price": 17.50,
+                    "description": "Tender chicken in a rich and buttery tomato-based curry"
+                },
+                {
+                    "name": "Dal Makhani",
+                    "price": 13.99,
+                    "description": "Creamy black lentils cooked with kidney beans and spices"
+                },
+                {
+                    "name": "Aloo Gobi",
+                    "price": 12.99,
+                    "description": "Potatoes and cauliflower cooked with Indian spices"
+                },
+                {
+                    "name": "Chicken Korma",
+                    "price": 18.50,
+                    "description": "Chicken in a mild and creamy cashew-based curry sauce"
+                },
+                {
+                    "name": "Chana Masala",
+                    "price": 14.25,
+                    "description": "Chickpeas in a spiced tomato-based sauce"
+                },
+                {
+                    "name": "Tandoori Naan",
+                    "price": 4.99,
+                    "description": "Traditional Indian flatbread baked in a tandoor oven"
+                },
+                {
+                    "name": "Mango Lassi",
+                    "price": 5.50,
+                    "description": "Refreshing yogurt-based drink with mango puree and a hint of cardamom"
+                }
+            ]
+        },
+        {
+            "category": "Sushi",
+            "items": [
+                {
+                    "name": "Sashimi Platter",
+                    "price": 21.99,
+                    "description": "Assorted slices of fresh raw fish served with wasabi and soy sauce"
+                },
+                {
+                    "name": "California Roll",
+                    "price": 14.50,
+                    "description": "Crab, avocado, and cucumber rolled in seaweed and rice"
+                },
+                {
+                    "name": "Spicy Tuna Roll",
+                    "price": 16.75,
+                    "description": "Tuna, spicy mayo, and cucumber rolled in seaweed and rice"
+                },
+                {
+                    "name": "Dragon Roll",
+                    "price": 18.99,
+                    "description": "Shrimp tempura, avocado, and eel rolled in seaweed and rice"
+                },
+                {
+                    "name": "Rainbow Roll",
+                    "price": 17.50,
+                    "description": "Assorted fish and avocado layered on top of a California roll"
+                },
+                {
+                    "name": "Vegetarian Maki",
+                    "price": 12.99,
+                    "description": "Assorted vegetables and avocado rolled in seaweed and rice"
+                },
+                {
+                    "name": "Tempura Uramaki",
+                    "price": 15.25,
+                    "description": "Shrimp tempura, avocado, and cucumber rolled inside-out with rice and seaweed"
+                },
+                {
+                    "name": "Nigiri Sampler",
+                    "price": 19.50,
+                    "description": "Assortment of individual pieces of fish or seafood on small beds of rice"
+                },
+                {
+                    "name": "Cucumber Roll",
+                    "price": 11.99,
+                    "description": "Cucumber rolled in seaweed and rice, perfect for a refreshing bite"
+                },
+                {
+                    "name": "Salmon Avocado Hand Roll",
+                    "price": 13.50,
+                    "description": "Salmon and avocado wrapped in seaweed for a handheld sushi delight"
+                }
+            ]
+        },
+        {
+            "category": "Street Food",
+            "items": [
+                {
+                    "name": "Chicken Shawarma",
+                    "price": 10.99,
+                    "description": "Grilled and thinly sliced chicken wrapped in flatbread with garlic sauce"
+                },
+                {
+                    "name": "Takoyaki",
+                    "price": 8.50,
+                    "description": "Japanese octopus balls, crispy on the outside and soft on the inside"
+                },
+                {
+                    "name": "Empanadas",
+                    "price": 9.75,
+                    "description": "Latin American turnovers filled with meat, cheese, or vegetables"
+                },
+                {
+                    "name": "Banh Mi Sandwich",
+                    "price": 11.50,
+                    "description": "Vietnamese baguette sandwich with a variety of fillings"
+                },
+                {
+                    "name": "Arepas",
+                    "price": 10.25,
+                    "description": "Venezuelan corn cakes filled with cheese, meat, or beans"
+                },
+                {
+                    "name": "Gyros",
+                    "price": 12.99,
+                    "description": "Greek street food featuring sliced meat in a pita with veggies and sauce"
+                },
+                {
+                    "name": "Churros",
+                    "price": 6.99,
+                    "description": "Deep-fried dough pastry, often served with cinnamon sugar and chocolate sauce"
+                },
+                {
+                    "name": "Samosas",
+                    "price": 8.75,
+                    "description": "Deep-fried pastries with savory fillings, such as spiced potatoes or meat"
+                },
+                {
+                    "name": "Hot Dog with Street Toppings",
+                    "price": 5.99,
+                    "description": "Classic hot dog with a variety of street food-style toppings"
+                },
+                {
+                    "name": "Crepes",
+                    "price": 7.50,
+                    "description": "Thin French pancakes with sweet or savory fillings"
+                }
+            ]
+        }
+    ]
+}
