@@ -2,7 +2,7 @@ import apiRequest from '../../api.js'
 
 export default {
   async placeOrder(context) {
-    let endpoint = 'order'
+    let endpoint = 'order/'
 
     try {
       let currentCart = context.getters['getCurrentCart']
