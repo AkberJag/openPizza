@@ -25,6 +25,9 @@ clean:
 stamp_h:
 	$(DOCKER_PATH) alembic stamp head
 
+addfake:
+	$(DOCKER_PATH) python fake_data/add_fake_data.py
+
 
 build:
 	docker compose up -d --build
