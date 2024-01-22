@@ -6,13 +6,13 @@ This is a :construction: work in progress :construction: side project
 
 - ⚠️ Make sure you can run 'make' 🐃 commands ⚠️
 
-Clone the project
+Clone the project 🧬👨‍💻
 
 ```bash
   git clone https://github.com/AkberJag/openPizza.git
 ```
 
-Go to the project directory
+Go to the project directory 📂
 
 ```bash
   cd openPizza
@@ -24,13 +24,13 @@ Run the Docker 🐳 containers
 make build
 ```
 
-When the containers are running, do the alembic migration
+When the containers are running, do the alembic migration 🚀
 
 ```bash
 make migrate
 ```
 
-Populate the DB with fake data (Optional)
+Populate the DB with fake data (Optional) 🌐📊
 
 ```bash
 make addfake
